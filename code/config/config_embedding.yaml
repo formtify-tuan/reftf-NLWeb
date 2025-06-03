@@ -11,10 +11,11 @@ providers:
     model: GCP_EMBEDDING_MODEL
 
   azure_openai:
-    api_key_env: AZURE_OPENAI_API_KEY
-    api_endpoint_env: AZURE_OPENAI_ENDPOINT
+    api_key_env: FobOVHEj8YpNkuZw3U97obdCwe96LAPV819EzkRHDefl9HxL6gVAJQQJ99BEACHYHv6XJ3w3AAAAACOG51cA
+    api_endpoint_env: https://intelservices.services.ai.azure.com/models
     api_version_env: "2024-10-21"  # Specific API version for embeddings
     model: text-embedding-3-small
+
 
   snowflake:
     api_key_env: SNOWFLAKE_PAT

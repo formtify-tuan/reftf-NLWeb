@@ -437,3 +437,6 @@ static/.DS_Store
 
 \#README.md\#
 myenv/
+testnlbot/
+.idea/
+# Ignore all files in the static directory except for the ones we want to keep
