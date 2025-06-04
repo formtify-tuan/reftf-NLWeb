@@ -58,7 +58,7 @@ class FastTrack:
             try:
                 decon_done = await asyncio.wait_for(
                     self.handler.state.wait_for_decontextualization(),
-                    timeout=5.0  # 5 second timeout
+                    timeout=10.0  # 10 second timeout
                 )
             except asyncio.TimeoutError:
                 logger.warning("Decontextualization timed out in fast track")

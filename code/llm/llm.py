@@ -45,7 +45,7 @@ async def ask_llm(
     schema: Dict[str, Any],
     provider: Optional[str] = None,
     level: str = "low",
-    timeout: int = 8
+    timeout: int = 30
 ) -> Dict[str, Any]:
     """
     Route an LLM request to the specified endpoint, with dispatch based on llm_type.
