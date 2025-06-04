@@ -33,12 +33,12 @@ endpoints:
 
   azure_openai:
     api_key_env: FobOVHEj8YpNkuZw3U97obdCwe96LAPV819EzkRHDefl9HxL6gVAJQQJ99BEACHYHv6XJ3w3AAAAACOG51cA
-    api_endpoint_env: https://intelservices.services.ai.azure.com/models
-    api_version_env: "2025-01-01-preview"
+    api_endpoint_env: https://intelservices.openai.azure.com/
+    api_version_env: "2024-12-01-preview"
     llm_type: azure_openai
     models:
-      high: gpt-4o
-      low: gpt-4o-mini
+      high: agent-gpt-4o
+      low: agent-gpt-4o-mini
 
   llama_azure:
     api_key_env: LLAMA_AZURE_API_KEY
