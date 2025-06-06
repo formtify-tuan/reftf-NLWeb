@@ -28,23 +28,12 @@ code/
 |   ├── state.py                  # State management
 |   └── whoHandler.py             #
 ├── embedding/
-|   ├── anthropic_embedding.py    #
-|   ├── azure_oai_embedding.py    #
-|   ├── embedding.py              #
-|   ├── gemini_embedding.py       #
-|   ├── openai_embedding.py       #
-|   ├── snowflake_embedding.py    #
+|   ├── azure_oai_embedding.py    # Azure embedding client
+|   ├── embedding.py              # Embedding wrapper
 ├── llm/
-|   ├── anthropic.py              #
-|   ├── azure_deepseek.py         #
-|   ├── azure_llama.py            #
-|   ├── azure_oai.py              #
-|   ├── gemini.py                 #
-|   ├── inception.py              #
-|   ├── llm_provider.py           #
-|   ├── llm.py                    #
-|   ├── openai.py                 #
-|   └── snowflake.py              #
+|   ├── azure_oai.py              # Azure OpenAI LLM client
+|   ├── llm_provider.py           # Base provider interface
+|   └── llm.py                    # Wrapper for LLM calls
 ├── logs/                         # folder to which all logs are sent
 ├── pre_retrieval/
 |   ├── analyze_query.py          # Query analysis
@@ -57,12 +46,9 @@ code/
 |   ├── prompts.py                #
 |   ├── site_type.xml             # Site type definitions
 ├── retrieval/                    # Static files directory
-|   ├── azure_search_client.py    # Azure AI Search integration
-|   ├── milvus_client.py          # Milvus Client integration (under development)
-|   ├── qdrant_retrieve.py        # Qdrant vector database integration
-|   ├── qdrant.py                 # Qdrant Client integration
-|   ├── retriever.py              # Data retrieval
-|   └── snowflake_retrieve.py     # Snowflake vector database integration
+|   ├── qdrant_retrieve.py        # Qdrant vector database helpers
+|   ├── qdrant.py                 # Qdrant client
+|   └── retriever.py              # Data retrieval
 ├── tools/
 |   ├── db_load_utils.py          #
 |   ├── db_load.py                #

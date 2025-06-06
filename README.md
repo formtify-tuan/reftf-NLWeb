@@ -2,7 +2,7 @@
 
 Building conversational interfaces for websites is hard. NLWeb seeks to make it easy for websites to do this. And since NLWeb natively speaks MCP, the same natural language APIs can be used both by humans and agents.
 
-Schema.org and related semi-structured formats like RSS, in use by over 100m websites, have become not just the defacto syndication mechanism but also the semantic layer for the web. NLWeb leverages these to make it much easier to create natural language interfaces.
+Schema.org and related semi-structured formats like RSS, along with corporate document collections, have become not just the defacto syndication mechanism but also the semantic layer for the web. NLWeb leverages these to make it much easier to create natural language interfaces.
 
 NLWeb is a collection of open protocols and associated open source tools. Its main focus is establishing a foundational layer for the AI Web — much like HTML revolutionized document sharing. To make this vision reality, NLWeb provides practical implementation code—not as the definitive solution, but as proof-of-concept demonstrations showing one possible approach. We expect and encourage the community to develop diverse, innovative implementations that surpass our examples. This mirrors the web's own evolution, from the humble 'htdocs' folder in NCSA's http server to today's massive data center infrastructures—all unified by shared protocols that enable seamless communication.
 
@@ -47,7 +47,7 @@ This repository contains the following:
 
 - The code for the core service -- handling a natural language query on how this can be extended / customized.
 - Connectors to some of the popular LLMs and vector databases.
-- Tools for adding data in schema.org jsonl, RSS, etc. to a vector database of choice.
+- Tools for adding data in schema.org JSONL, RSS feeds or corporate documents to a vector database of choice.
 - A web server front end for this service. The service, being small enough runs in the web server.
 - A simple UI for enabling users to issue queries via this web server.
 
