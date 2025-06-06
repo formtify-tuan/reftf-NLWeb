@@ -16,28 +16,14 @@ import threading
 
 
 # Import provider instances
-from llm.anthropic import provider as anthropic_provider
 from llm.azure_oai import provider as azure_openai_provider
-from llm.openai import provider as openai_provider
-from llm.gemini import provider as gemini_provider
-from llm.azure_llama import provider as llama_provider
-from llm.azure_deepseek import provider as deepseek_provider
-from llm.inception import provider as inception_provider
-from llm.snowflake import provider as snowflake_provider
 
 from utils.logging_config_helper import get_configured_logger, LogLevel
 logger = get_configured_logger("llm_wrapper")
 
 # LLM type to provider mapping
 _llm_type_providers = {
-    "openai": openai_provider,
-    "anthropic": anthropic_provider,
-    "gemini": gemini_provider,
-    "azure_openai": azure_openai_provider,
-    "llama_azure": llama_provider,
-    "deepseek_azure": deepseek_provider,
-    "inception": inception_provider,
-    "snowflake": snowflake_provider
+    "azure_openai": azure_openai_provider
 }
 
 async def ask_llm(

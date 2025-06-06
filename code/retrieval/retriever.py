@@ -17,10 +17,7 @@ from utils.logging_config_helper import get_configured_logger
 from utils.logger import LogLevel
 
 # Import client classes
-from retrieval.azure_search_client import AzureSearchClient
-from retrieval.milvus_client import MilvusVectorClient
 from retrieval.qdrant import QdrantVectorClient
-from retrieval.snowflake_client import SnowflakeCortexSearchClient
 
 logger = get_configured_logger("retriever")
 
@@ -166,14 +163,8 @@ class VectorDBClient:
             # Create the appropriate client
             logger.debug(f"Creating new client for {self.db_type} with endpoint {self.endpoint_name}")
             
-            if self.db_type == "azure_ai_search":
-                client = AzureSearchClient(self.endpoint_name)
-            elif self.db_type == "milvus":
-                client = MilvusVectorClient(self.endpoint_name)
-            elif self.db_type == "qdrant":
+            if self.db_type == "qdrant":
                 client = QdrantVectorClient(self.endpoint_name)
-            elif self.db_type == "snowflake_cortex_search":
-                client = SnowflakeCortexSearchClient(self.endpoint_name)
             else:
                 error_msg = f"Unsupported database type: {self.db_type}"
                 logger.error(error_msg)

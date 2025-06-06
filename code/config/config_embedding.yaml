@@ -1,24 +1,8 @@
 preferred_provider: azure_openai
 
 providers:
-  openai:
-    api_key_env: OPENAI_API_KEY
-    api_endpoint_env: OPENAI_ENDPOINT
-    model: text-embedding-3-small
-
-  gemini:
-    api_key_env: GCP_PROJECT
-    model: GCP_EMBEDDING_MODEL
-
   azure_openai:
-    api_key_env: FobOVHEj8YpNkuZw3U97obdCwe96LAPV819EzkRHDefl9HxL6gVAJQQJ99BEACHYHv6XJ3w3AAAAACOG51cA
-    api_endpoint_env: https://intelservices.openai.azure.com/
-    api_version_env: "2024-02-01"  # Specific API version for embeddings
-    model: intel-text-embedding-3-small
-
-
-  snowflake:
-    api_key_env: SNOWFLAKE_PAT
-    api_endpoint_env: SNOWFLAKE_ACCOUNT_URL
-    api_version_env: "2024-10-01"
-    model: snowflake-arctic-embed-m-v1.5
+    api_key_env: AZURE_OPENAI_KEY
+    api_endpoint_env: AZURE_OPENAI_ENDPOINT
+    api_version_env: AZURE_OPENAI_VERSION
+    model: text-embedding-3-large
