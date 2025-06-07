@@ -62,6 +62,20 @@ We expect most production deployments to use their own UI. They are also likely 
 - Running it on GCP... coming soon
 - Running it AWS... coming soon
 
+### Environment Variables
+
+Copy `code/.env.template` to `.env` and set the following variables before
+running the server:
+
+- `AZURE_OPENAI_KEY` – Azure OpenAI API key
+- `AZURE_OPENAI_ENDPOINT` – base URL of your Azure OpenAI resource
+- `AZURE_OPENAI_VERSION` – API version to use
+- `QDRANT_LOCAL_PATH` – local path for Qdrant (optional)
+- `QDRANT_URL` – remote Qdrant server URL (optional)
+- `QDRANT_API_KEY` – API key for remote Qdrant (optional)
+- `NLWEB_OUTPUT_DIR` – directory for logs and data (optional)
+- `NLWEB_LOGGING_PROFILE` – logging configuration profile
+
 ### NLWeb
 
 - [Life of a Chat Query](docs/life-of-a-chat-query.md)

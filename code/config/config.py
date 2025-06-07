@@ -160,13 +160,16 @@ class AppConfig:
                     high=self._get_config_value(m.get("high")),
                     low=self._get_config_value(m.get("low"))
                 ) if m else None
-                
-                # Extract configuration values from the YAML with the new method
-                api_key = self._get_config_value(cfg.get("api_key_env"))
-                api_endpoint = self._get_config_value(cfg.get("api_endpoint_env"))
-                api_version = self._get_config_value(cfg.get("api_version_env"))
+
+                # Environment variable names are stored in the YAML
+                api_key_env = cfg.get("api_key_env")
+                api_key = os.getenv(api_key_env) if api_key_env else None
+                endpoint_env = cfg.get("api_endpoint_env")
+                api_endpoint = os.getenv(endpoint_env) if endpoint_env else None
+                version_env = cfg.get("api_version_env")
+                api_version = os.getenv(version_env) if version_env else None
                 llm_type = self._get_config_value(cfg.get("llm_type"))
-                # Create the LLM provider config - no longer include embedding model
+
                 self.llm_endpoints[name] = LLMProviderConfig(
                     llm_type=llm_type,
                     api_key=api_key,
@@ -198,12 +201,14 @@ class AppConfig:
 
         for name, cfg in data.get("providers", {}).items():
             # Extract configuration values from the YAML
-            api_key = self._get_config_value(cfg.get("api_key_env"))
-            api_endpoint = self._get_config_value(cfg.get("api_endpoint_env"))
-            api_version = self._get_config_value(cfg.get("api_version_env"))
+            api_key_env = cfg.get("api_key_env")
+            api_key = os.getenv(api_key_env) if api_key_env else None
+            endpoint_env = cfg.get("api_endpoint_env")
+            api_endpoint = os.getenv(endpoint_env) if endpoint_env else None
+            version_env = cfg.get("api_version_env")
+            api_version = os.getenv(version_env) if version_env else None
             model = self._get_config_value(cfg.get("model"))
 
-            # Create the embedding provider config
             self.embedding_providers[name] = EmbeddingProviderConfig(
                 api_key=api_key,
                 endpoint=api_endpoint,
