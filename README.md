@@ -33,11 +33,9 @@ AI has the potential to enhance every web interaction, but realizing this vision
 
 ## NLWeb and platforms
 
-NLWeb is deeply agnostic:
-
-- About the platform: We have tested it running on Windows, MacOS, Linux...
-- About the vector stores used: Qdrant, Snowflake, Milvus, Azure AI Search...
-- About the LLM: OAI, Deepseek, Gemini, Anthropic, Inception...
+- NLWeb runs on Windows, MacOS, and Linux.
+- The reference implementation uses Qdrant for retrieval.
+- Azure OpenAI provides the LLM and embedding models.
 - It is intended to be both lightweight and scalable, running on everything from clusters
   in the cloud to laptops and soon phones.
 
@@ -46,7 +44,7 @@ NLWeb is deeply agnostic:
 This repository contains the following:
 
 - The code for the core service -- handling a natural language query on how this can be extended / customized.
-- Connectors to some of the popular LLMs and vector databases.
+- Connectors for Azure OpenAI and the Qdrant vector database.
 - Tools for adding data in schema.org JSONL, RSS feeds or corporate documents to a vector database of choice.
 - A web server front end for this service. The service, being small enough runs in the web server.
 - A simple UI for enabling users to issue queries via this web server.

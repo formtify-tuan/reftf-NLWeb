@@ -1,6 +1,6 @@
 # Configuration files
 
-The NLWeb implementation in this repo supports a number of different vector stores, LLMs and embedding providers. The directory called config contains all the configurations.
+The NLWeb implementation in this repo currently includes configuration for Azure OpenAI and the Qdrant vector database. The directory called `config` contains all the YAML files used by the application.
 
 We have the following configuration files (all yaml):
 
