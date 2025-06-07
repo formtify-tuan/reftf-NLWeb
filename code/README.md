@@ -45,8 +45,7 @@ code/
 |   ├── prompt_runner.py          # 
 |   ├── prompts.py                #
 |   ├── site_type.xml             # Site type definitions
-├── retrieval/                    # Static files directory
-|   ├── qdrant_retrieve.py        # Qdrant vector database helpers
+├── retrieval/                    # Vector database helpers
 |   ├── qdrant.py                 # Qdrant client
 |   └── retriever.py              # Data retrieval
 ├── tools/

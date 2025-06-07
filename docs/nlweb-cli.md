@@ -20,7 +20,7 @@ This will temporarily add the `nlweb` command to your PATH and create an alias f
 
 2. **Preference Management**: The CLI remembers user preferences, such as preferred LLM provider and retrieval endpoint, storing them in configuration files for future use.
 
-3. **Environment Validation**: Before running the main application, the CLI can check connections to Azure OpenAI, Snowflake, or other services, ensuring everything is properly configured.
+3. **Environment Validation**: Before running the main application, the CLI can check connections to Azure OpenAI and Qdrant, ensuring everything is properly configured.
 
 4. **Interactive Setup**: Rather than requiring users to manually edit configuration files, the CLI provides an interactive process to select options and input necessary credentials.
 
@@ -64,7 +64,7 @@ To configure your environment:
 nlweb init
 ```
 
-This will guide you through selecting an LLM provider (e.g., Azure OpenAI, OpenAI, Anthropic, etc.) and a retrieval endpoint (e.g., Azure Vector Search, Qdrant, Snowflake Cortex, etc.). The CLI will then prompt you for any required API keys or endpoints.
+This will guide you through configuring Azure OpenAI and selecting a Qdrant endpoint. The CLI will prompt you for any required API keys or URLs.
 
 ### Connection Test
 
@@ -101,9 +101,9 @@ These files store settings including:
 
 The CLI helps manage environment variables required by the application, storing them in `.env`. These typically include:
 
-- API keys for various LLM providers (OpenAI, Azure OpenAI, Anthropic, etc.)
-- Endpoints for services (Azure Vector Search, Qdrant, etc.)
-- Other configuration options specific to each provider or endpoint
+- API keys for Azure OpenAI and Qdrant
+- Endpoint URLs for Qdrant
+- Other configuration options specific to these services
 
 ### Pre-Existing Environment Variables
 
