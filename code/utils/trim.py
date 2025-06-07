@@ -72,28 +72,28 @@ def trim_movie(obj, hard=False):
     skipAttrs = ["mainEntityOfPage", "publisher", "image", "datePublished", "dateModified", "author", "trailer"]
     if (hard):
         skipAttrs.extend(["actor", "director", "creator", "review"])
-    for attr in items.keys():
-        if (attr in skipAttrs):
+    for attr, values in items.items():
+        if attr in skipAttrs:
             continue
-        elif (attr == "actor" or attr == "director" or attr == "creator"):
-            if ("name" in items[attr]):
-                if (attr not in js):
-                    js[attr] = []
-                js[attr].append(items[attr]["name"])
-        elif (attr == "review"):
-            items['review'] = []
-            for review in items['review']:
-                if ("reviewBody" in review):    
-                    js[attr].append(review["reviewBody"])
+        elif attr in ("actor", "director", "creator"):
+            for person in values:
+                if isinstance(person, dict) and "name" in person:
+                    js.setdefault(attr, []).append(person["name"])
+        elif attr == "review":
+            for review in values:
+                if isinstance(review, dict) and "reviewBody" in review:
+                    js.setdefault(attr, []).append(review["reviewBody"])
         else:
-            js[attr] = items[attr]
+            js[attr] = values
     return js
 
 def collateObjAttr(obj):
     items = {}
-    for attr in obj.keys():
-        if (attr in items):
-            items[attr].append(obj[attr])
+    for attr, value in obj.items():
+        if attr not in items:
+            items[attr] = []
+        if isinstance(value, list):
+            items[attr].extend(value)
         else:
-            items[attr] = [obj[attr]]
+            items[attr].append(value)
     return items
